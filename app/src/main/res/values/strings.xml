@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">UtilityApp</string>
+    <string name="equals">=</string>
+    <string name="convert">Convert</string>
+    <string name="_1">1</string>
+    <string name="blank" />
+    <string name="travel_companion">Travel Companion</string>
+    <string name="todo">TODO</string>
+    <string name="it_is_20_celsius">It is 20 celsius</string>
+    <string name="set">Set.</string>
+    <string name="your_currency">Your Currency</string>
+    <string name="local_currency">Local Currency</string>
 </resources>
