@@ -10,4 +10,6 @@
     <string name="set">Set.</string>
     <string name="your_currency">Your Currency</string>
     <string name="local_currency">Local Currency</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="confirm">Confirm</string>
 </resources>
