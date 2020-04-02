@@ -10,9 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
     public static String[] locations = { "United States", "Japan", "United Kingdom", "France" };
+
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void convertClicked(View view){
         double sum;
+        String formatedSum;
         Button button = (Button) view;
         EditText hCurr = findViewById(R.id.homeCurrency);
         EditText lCurr = findViewById(R.id.localCurrency);
@@ -41,19 +45,23 @@ public class MainActivity extends AppCompatActivity {
             switch (Settings.homeLocat) {
                 case "United States":
                     sum = hConvtd * 0.61;
-                    lCurr.setText(Double.toString(sum));
+                    formatedSum = df2.format(sum);
+                    lCurr.setText(formatedSum);
                     break;
                 case "Japan":
                     sum = hConvtd * 65.35;
-                    lCurr.setText(Double.toString(sum));
+                    formatedSum = df2.format(sum);
+                    lCurr.setText(formatedSum);
                     break;
                 case "United Kingdom":
                     sum = hConvtd * 0.49;
-                    lCurr.setText(Double.toString(sum));
+                    formatedSum = df2.format(sum);
+                    lCurr.setText(formatedSum);
                     break;
                 case "France":
                     sum = hConvtd * 0.56;
-                    lCurr.setText(Double.toString(sum));
+                    formatedSum = df2.format(sum);
+                    lCurr.setText(formatedSum);
                     break;
                 default:
                     Context context = getApplicationContext();
@@ -67,11 +75,13 @@ public class MainActivity extends AppCompatActivity {
             switch (Settings.homeLocat) {
                 case "United States":
                     sum = lConvtd / 0.61;
-                    hCurr.setText(Double.toString(sum));
+                    formatedSum = df2.format(sum);
+                    hCurr.setText(formatedSum);
                     break;
                 case "Japan":
                     sum = lConvtd / 65.35;
-                    hCurr.setText(Double.toString(sum));
+                    formatedSum = df2.format(sum);
+                    hCurr.setText(formatedSum);
                     break;
                 case "United Kingdom":
                     sum = lConvtd / 0.49;
@@ -79,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case "France":
                     sum = lConvtd / 0.56;
-                    hCurr.setText(Double.toString(sum));
+                    formatedSum = df2.format(sum);
+                    hCurr.setText(formatedSum);
                     break;
                 default:
                     Context context = getApplicationContext();

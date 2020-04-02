@@ -13,15 +13,14 @@ import android.widget.Toast;
 public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
     // Settings controls home location, which affects home currency
     public static String homeLocat = "United States";
-    public String homeLocatMov = "United States";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Spinner lspin = (Spinner) findViewById(R.id.localSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.locations);
+        Spinner lspin = findViewById(R.id.localSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, MainActivity.locations);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         lspin.setAdapter(adapter);
         lspin.setOnItemSelectedListener(this);
@@ -29,8 +28,7 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
 
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
-        homeLocatMov = MainActivity.locations[position];
-        homeLocat = homeLocatMov;
+        homeLocat = MainActivity.locations[position];
     }
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
@@ -38,7 +36,7 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
     public void saveClicked(View view){
-        Toast.makeText(getApplicationContext(), "Home Currency saved to: " + homeLocat ,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Home Currency saved to: " + homeLocat,Toast.LENGTH_SHORT).show();
         finish();
     }
 
