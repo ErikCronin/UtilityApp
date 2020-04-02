@@ -8,8 +8,11 @@
     <string name="todo">TODO</string>
     <string name="it_is_20_celsius">It is 20 celsius</string>
     <string name="set">Set.</string>
-    <string name="your_currency">Your Currency</string>
     <string name="local_currency">Local Currency</string>
     <string name="save_settings">Save Settings</string>
     <string name="confirm">Confirm</string>
+    <string name="aud">$ AUD</string>
+    <string name="convert_to_local_currency">Convert To Local Currency</string>
+    <string name="convert_to_home_currency">Convert To Home Currency</string>
+    <string name="zero">0</string>
 </resources>

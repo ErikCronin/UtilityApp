@@ -17,13 +17,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/homeCurrencySet"
+                android:id="@+id/localCurrencySet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/your_currency" />
+                android:text="@string/local_currency" />
 
             <Spinner
-                android:id="@+id/homeSpinner"
+                android:id="@+id/localSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </TableRow>
