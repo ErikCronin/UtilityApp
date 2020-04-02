@@ -31,7 +31,6 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
         homeLocatMov = MainActivity.locations[position];
         homeLocat = homeLocatMov;
-        Toast.makeText(getApplicationContext(), "Your Home Currency Is: " + MainActivity.locations[position] ,Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {

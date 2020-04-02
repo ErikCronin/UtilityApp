@@ -2,6 +2,7 @@ package com.derk.utilityapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @SuppressLint("SetTextI18n")
     public void convertClicked(View view){
         double sum;
         Button button = (Button) view;
@@ -36,26 +38,64 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(convType);
 
         if (convType.equals("Convert To Local Currency")) {
-            sum = hConvtd * 0.61;
-            lCurr.setText(Double.toString(sum));
+            switch (Settings.homeLocat) {
+                case "United States":
+                    sum = hConvtd * 0.61;
+                    lCurr.setText(Double.toString(sum));
+                    break;
+                case "Japan":
+                    sum = hConvtd * 65.35;
+                    lCurr.setText(Double.toString(sum));
+                    break;
+                case "United Kingdom":
+                    sum = hConvtd * 0.49;
+                    lCurr.setText(Double.toString(sum));
+                    break;
+                case "France":
+                    sum = hConvtd * 0.56;
+                    lCurr.setText(Double.toString(sum));
+                    break;
+                default:
+                    Context context = getApplicationContext();
+                    CharSequence text = "Error";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    break;
+            }
         } else if (convType.equals("Convert To Home Currency")) {
-            sum = lConvtd * 1.61;
-            hCurr.setText(Double.toString(sum));
+            switch (Settings.homeLocat) {
+                case "United States":
+                    sum = lConvtd / 0.61;
+                    hCurr.setText(Double.toString(sum));
+                    break;
+                case "Japan":
+                    sum = lConvtd / 65.35;
+                    hCurr.setText(Double.toString(sum));
+                    break;
+                case "United Kingdom":
+                    sum = lConvtd / 0.49;
+                    hCurr.setText(Double.toString(sum));
+                    break;
+                case "France":
+                    sum = lConvtd / 0.56;
+                    hCurr.setText(Double.toString(sum));
+                    break;
+                default:
+                    Context context = getApplicationContext();
+                    CharSequence text = "Error";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    break;
+            }
         } else {
             Context context = getApplicationContext();
-            CharSequence text = "Skrrt";
+            CharSequence text = "Error";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-    }
-
-    public void check(View view){
-        Context context = getApplicationContext();
-        CharSequence text = Settings.homeLocat;
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
     }
 
 }

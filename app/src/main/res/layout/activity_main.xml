@@ -41,26 +41,9 @@
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <ImageView
-                android:id="@+id/weatherPicture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/todo"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/weatherDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/it_is_20_celsius" />
-        </TableRow>
-
-        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="84sp"
             android:layout_gravity="center">
 
             <TextView
@@ -96,12 +79,12 @@
                 android:id="@+id/homeCurrency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
                 android:ems="5"
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:text="@string/_1"
                 android:textAlignment="center"
+                android:selectAllOnFocus="true"
                 tools:ignore="LabelFor" />
 
             <TextView
@@ -119,6 +102,7 @@
                 android:inputType="number"
                 android:text="@string/zero"
                 android:textAlignment="center"
+                android:selectAllOnFocus="true"
                 tools:ignore="LabelFor" />
         </TableRow>
 
@@ -149,18 +133,6 @@
                 android:onClick="convertClicked"
                 android:text="@string/convert_to_home_currency" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button"
-                android:onClick="check"/>
         </TableRow>
     </LinearLayout>
 
